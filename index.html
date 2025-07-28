@@ -207,7 +207,7 @@
             border-bottom: 1px dashed #eee;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
             font-size: 16px;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -224,6 +224,7 @@
         .icon-img {
             width: 36px;
             height: 36px;
+            min-width: 36px;
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -240,6 +241,7 @@
         
         .link-text {
             flex-grow: 1;
+            min-width: 0;
         }
         
         .highlight {
@@ -250,6 +252,9 @@
             color: #e67700;
             display: inline;
             margin: 0 3px;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4;
         }
         
         .vpn-highlight {
@@ -568,19 +573,22 @@
             .features li {
                 font-size: 14px;
                 padding: 10px;
-                flex-direction: column;
-                align-items: flex-start;
                 gap: 8px;
             }
             
-            .link-text {
-                width: 100%;
+            .icon-img {
+                width: 30px;
+                height: 30px;
+                min-width: 30px;
+            }
+            
+            .icon-img img {
+                width: 20px;
+                height: 20px;
             }
             
             .highlight, .vpn-highlight {
-                display: inline-block;
-                white-space: normal;
-                word-break: break-word;
+                font-size: 14px;
                 line-height: 1.4;
             }
             
@@ -606,16 +614,6 @@
             .logo {
                 width: 80px;
                 height: 80px;
-            }
-            
-            .icon-img {
-                width: 30px;
-                height: 30px;
-            }
-            
-            .icon-img img {
-                width: 18px;
-                height: 18px;
             }
             
             .modal-content {
@@ -741,7 +739,7 @@
                 <ul class="features">
                     <li data-url="https://www.oyicn.link/ul/6CngT5?channelId=XINYI999">
                         <div class="icon-img">
-                            <img src="./images/ouyi.jpg" alt="欧意图标" style="width:24px;height:24px;">
+                            <img src="./images/ouyi.jpg" alt="欧意图标">
                         </div>
                         <div class="link-text">
                             <span class="highlight">欧意:头部 永续开创者 代言人</span>
@@ -750,7 +748,7 @@
                     
                     <li data-url="https://www.marketwebb.systems/join?ref=833916344">
                         <div class="icon-img">
-                           <img src="./images/bian.jpg" alt="币安图标" style="width:24px;height:24px;">
+                           <img src="./images/bian.jpg" alt="币安图标">
                         </div>
                         <div class="link-text">
                             <span class="highlight">币安:头部 信誉保证 周边多多</span>
@@ -759,7 +757,7 @@
                     
                     <li data-url="https://www.gateweb.xyz/signup/XINYIVIP?ref_type=103">
                         <div class="icon-img">
-                            <img src="./images/gate.jpg" alt="gate图标" style="width:24px;height:24px;">
+                            <img src="./images/gate.jpg" alt="gate图标">
                         </div>
                         <div class="link-text">
                             <span class="highlight">芝麻Gate:手续费最低 信誉no.1 Gate</span>
@@ -768,7 +766,7 @@
                     
                     <li data-url="https://ksazabx.rest/zh-CN/register?vipCode=r6cm">
                         <div class="icon-img">
-                           <img src="./images/weike.jpg" alt="维克图标" style="width:24px;height:24px;">
+                           <img src="./images/weike.jpg" alt="维克图标">
                         </div>
                         <div class="link-text">
                             <span class="highlight">维客:热门新所 0滑点 不二首选</span>
@@ -786,7 +784,7 @@
                 <ul class="features">
                     <li data-text="345230888">
                         <div class="icon-img">
-                            <img src="./images/kuailian.jpg" alt="快联图标" style="width:24px;height:24px;">
+                            <img src="./images/kuailian.jpg" alt="快联图标">
                         </div>
                         <div class="link-text">
                             <span class="vpn-highlight">Let's VPN 邀请码：345230888 (送三天会员)</span>
@@ -813,7 +811,7 @@
                     
                     <li data-url="https://www.coinglass.com/zh">
                         <div class="icon-img">
-                           <img src="./images/heyue.jpg" alt="合约图标" style="width:24px;height:24px;">
+                           <img src="./images/heyue.jpg" alt="合约图标">
                         </div>
                         <div class="link-text">
                             <span class="vpn-highlight">合约数据库coinglass</span>
@@ -822,7 +820,7 @@
                     
                     <li data-url="https://cn.tradingview.com/">
                         <div class="icon-img">
-                            <img src="./images/kanpan.jpg" alt="看盘图标" style="width:24px;height:24px;">
+                            <img src="./images/kanpan.jpg" alt="看盘图标">
                         </div>
                         <div class="link-text">
                             <span class="vpn-highlight">最好用的看盘软件</span>
@@ -831,7 +829,7 @@
                     
                     <li data-url="https://www.aicoin.com/zh-Hans">
                         <div class="icon-img">
-                           <img src="./images/aico.jpg" alt="aico图标" style="width:24px;height:24px;">
+                           <img src="./images/aico.jpg" alt="aico图标">
                         </div>
                         <div class="link-text">
                             <span class="vpn-highlight">AiCoin-领先的数据行情、智能工具平台</span>
@@ -840,7 +838,7 @@
                     
                     <li data-url="https://coinmarketcap.com/">
                         <div class="icon-img">
-                            <img src="./images/bian2.jpg" alt="2图标" style="width:24px;height:24px;">
+                            <img src="./images/bian2.jpg" alt="2图标">
                         </div>
                         <div class="link-text">
                             <span class="vpn-highlight">币安合约数据库</span>
@@ -849,7 +847,7 @@
                     
                     <li data-url="https://www.binance.com/zh-CN/futures/funding-history/perpetual/trading-data">
                         <div class="icon-img">
-                           <img src="./images/bian2.jpg" alt="2图标" style="width:24px;height:24px;">
+                           <img src="./images/bian2.jpg" alt="2图标">
                         </div>
                         <div class="link-text">
                             <span class="vpn-highlight">币圈最全的数据库coinglass</span>
@@ -858,7 +856,7 @@
                     
                     <li data-url="https://tokenomist.ai/">
                         <div class="icon-img">
-                             <img src="./images/daibi.jpg" alt="代币" style="width:24px;height:24px;">
+                             <img src="./images/daibi.jpg" alt="代币">
                         </div>
                         <div class="link-text">
                             <span class="vpn-highlight">代币解锁查询</span>
@@ -867,7 +865,7 @@
                     
                     <li data-url="https://0595btc.com/">
                         <div class="icon-img">
-                          <img src="./images/jujing.jpg" alt="图标" style="width:24px;height:24px;">
+                          <img src="./images/jujing.jpg" alt="图标">
                         </div>
                         <div class="link-text">
                             <span class="vpn-highlight">巨鲸钱包监测</span>
@@ -884,7 +882,7 @@
                 <ul class="features">
                     <li data-url="https://www.panewslab.com/zh">
                         <div class="icon-img">
-                            <img src="./images/pan.jpg" alt="图标" style="width:24px;height:24px;">
+                            <img src="./images/pan.jpg" alt="图标">
                         </div>
                         <div class="link-text">
                             <span class="highlight">PANews</span>
@@ -893,7 +891,7 @@
                     
                     <li data-url="https://foresightnews.pro/news">
                         <div class="icon-img">
-                           <img src="./images/for.jpg" alt="图标" style="width:24px;height:24px;">
+                           <img src="./images/for.jpg" alt="图标">
                         </div>
                         <div class="link-text">
                             <span class="highlight">Foresightnews</span>
@@ -902,7 +900,7 @@
                     
                     <li data-url="https://www.theblockbeats.info/">
                         <div class="icon-img">
-                          <img src="./images/the.jpg" alt="图标" style="width:24px;height:24px;">
+                          <img src="./images/the.jpg" alt="图标">
                         </div>
                         <div class="link-text">
                             <span class="highlight">Theblockbeats</span>
@@ -910,7 +908,7 @@
                     </li>
                     <li data-url="https://cn.investing.com/">
                         <div class="icon-img">
-                            <img src="./images/inv.jpg" alt="图标" style="width:24px;height:24px;">
+                            <img src="./images/inv.jpg" alt="图标">
                         </div>
                         <div class="link-text">
                             <span class="highlight">Investing</span>
