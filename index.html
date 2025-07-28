@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新一社区资源网</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans SC', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 800px;
+            overflow: hidden;
+            margin: 20px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        header {
+            background: linear-gradient(to right, #4b6cb7, #182848);
+            color: white;
+            padding: 40px 20px 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .logo-container {
+            position: relative;
+            margin: 0 auto 20px;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 2;
+            background: #fff;
+            overflow: hidden;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .logo-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #4b6cb7, #182848);
+            border-radius: 50%;
+            animation: pulse 3s infinite;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin: 10px 0;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .main-link {
+            display: block;
+            background: #ff6b6b;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 10px;
+            margin: 20px auto;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            max-width: 300px;
+            cursor: pointer;
+        }
+        
+        .main-link:hover {
+            background: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        
+        .divider {
+            height: 4px;
+            background: linear-gradient(to right, #4b6cb7, #ffd700, #ff6b6b);
+            margin: 30px auto;
+            border-radius: 2px;
+            width: 90%;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            color: #182848;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: #ff6b6b;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        .cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 0 20px 30px;
+        }
+        
+        .contact-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            padding: 25px;
+            transition: all 0.3s ease;
+            border-top: 5px solid #4b6cb7;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .vpn-card {
+            border-top: 5px solid #fdbb2d;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+        }
+        
+        .card-title {
+            font-size: 24px;
+            color: #182848;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-align: center;
+        }
+        
+        .card-title i {
+            color: #ff6b6b;
+            font-size: 28px;
+        }
+        
+        .vpn-card .card-title i {
+            color: #fdbb2d;
+        }
+        
+        .features {
+            list-style-type: none;
+            padding: 15px 0;
+        }
+        
+        .features li {
+            padding: 12px 15px;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .features li:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .features li:last-child {
+            border-bottom: none;
+        }
+        
+        .icon-img {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0f7ff;
+            flex-shrink: 0;
+        }
+        
+        .icon-img img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+        
+        .link-text {
+            flex-grow: 1;
+        }
+        
+        .highlight {
+            background: linear-gradient(to right, #fff9db, #fff0b3);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #e67700;
+            display: inline;
+            margin: 0 3px;
+        }
+        
+        .vpn-highlight {
+            background: linear-gradient(to right, #e6f7ff, #b3e0ff);
+            color: #0066cc;
+        }
+        
+        .hidden-link {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #f0f7ff;
+            border-radius: 8px;
+            word-break: break-all;
+            font-size: 14px;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .link-item {
+            display: block;
+            padding: 12px 15px;
+            margin: 8px 0;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            border-left: 3px solid #4b6cb7;
+            transition: all 0.2s ease;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .link-item:hover {
+            background-color: #e9ecef;
+            transform: translateX(5px);
+        }
+        
+        .vpn-card .link-item {
+            border-left-color: #fdbb2d;
+        }
+        
+        .qr-section {
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .qr-title {
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: #182848;
+            font-weight: bold;
+        }
+        
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #4b6cb7, #182848);
+            margin: 0 auto;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            flex-direction: column;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .qr-code i {
+            font-size: 70px;
+            margin-bottom: 15px;
+            z-index: 2;
+        }
+        
+        .qr-code::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, transparent 48%, rgba(255,255,255,0.1) 50%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, rgba(255,255,255,0.1) 50%, transparent 52%);
+            background-size: 20px 20px;
+            z-index: 1;
+        }
+        
+        .qr-code div {
+            z-index: 2;
+            line-height: 1.6;
+        }
+        
+        footer {
+            background: #182848;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .benefits {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 500px;
+            margin: 20px auto;
+            gap: 15px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 15px;
+            border-radius: 30px;
+            font-size: 14px;
+        }
+        
+        .benefit-item i {
+            margin-right: 8px;
+            color: #ffd700;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .info-box {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #4b6cb7;
+        }
+        
+        .info-box.warning {
+            border-left-color: #e67e22;
+            background: #fff9db;
+        }
+        
+        /* 二维码弹窗样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 400px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            position: relative;
+            animation: modalIn 0.3s ease;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            color: #888;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .modal-close:hover {
+            color: #ff5252;
+            transform: scale(1.1);
+        }
+        
+        .modal-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #182848;
+        }
+        
+        .modal-qr-code {
+            width: 200px;
+            height: 200px;
+            background: white;
+            margin: 0 auto 20px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 10px;
+        }
+        
+        .modal-qr-code img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .modal-text {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        
+        .modal-note {
+            font-size: 14px;
+            color: #888;
+            margin-top: 15px;
+        }
+        
+        /* 动画效果 */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.1); opacity: 0.9; }
+            100% { transform: scale(1); opacity: 0.7; }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes modalIn {
+            from { opacity: 0; transform: translateY(-50px) scale(0.8); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        
+        /* 背景装饰 */
+        .bg-decoration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .decoration-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            animation: float 15s infinite linear;
+        }
+        
+        .circle-1 {
+            width: 150px;
+            height: 150px;
+            top: 10%;
+            left: 5%;
+            animation-duration: 20s;
+        }
+        
+        .circle-2 {
+            width: 100px;
+            height: 100px;
+            top: 70%;
+            left: 80%;
+            animation-duration: 15s;
+        }
+        
+        .circle-3 {
+            width: 80px;
+            height: 80px;
+            top: 30%;
+            left: 90%;
+            animation-duration: 25s;
+        }
+        
+        .circle-4 {
+            width: 120px;
+            height: 120px;
+            top: 80%;
+            left: 10%;
+            animation-duration: 18s;
+        }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, 30px) rotate(90deg); }
+            50% { transform: translate(0, 60px) rotate(180deg); }
+            75% { transform: translate(-20px, 30px) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 26px;
+            }
+            
+            .main-link {
+                font-size: 20px;
+                padding: 12px;
+                max-width: 260px;
+            }
+            
+            header {
+                padding: 30px 15px 25px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+                margin: 20px 0;
+            }
+            
+            .features li {
+                font-size: 14px;
+                padding: 10px;
+            }
+            
+            .qr-code {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .qr-code i {
+                font-size: 60px;
+            }
+            
+            .link-item {
+                font-size: 14px;
+                padding: 10px;
+            }
+            
+            .logo-container {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .logo {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .icon-img {
+                width: 30px;
+                height: 30px;
+            }
+            
+            .icon-img img {
+                width: 18px;
+                height: 18px;
+            }
+            
+            .modal-content {
+                width: 95%;
+                padding: 20px;
+            }
+            
+            .modal-title {
+                font-size: 22px;
+            }
+            
+            .modal-qr-code {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .modal-note {
+                font-size: 12px;
+            }
+            
+            .download-item {
+                max-width: 300px;
+            }
+        }
+        
+        /* 飞书下载项样式 */
+        .download-container {
+            max-width: 300px;
+            margin: 0 auto 10px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .download-container:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+        
+        .download-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: white;
+            font-weight: 500;
+        }
+        
+        .download-item i {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 背景装饰元素 -->
+    <div class="bg-decoration">
+        <div class="decoration-circle circle-1"></div>
+        <div class="decoration-circle circle-2"></div>
+        <div class="decoration-circle circle-3"></div>
+        <div class="decoration-circle circle-4"></div>
+    </div>
+    
+    <!-- 二维码弹窗 -->
+    <div id="qrModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h3 class="modal-title">添加飞书好友</h3>
+            <div class="modal-qr-code">
+                <img src="./images/feishu.jpg" alt="飞书二维码">
+            </div>
+            <p class="modal-text">扫描上方二维码添加飞书好友</p>
+            <p class="modal-note">添加好友时请备注"新一社区"</p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo-bg"></div>
+                <div class="logo">
+                    <img src="./images/log.jpg" alt="新一社区Logo">
+                </div>
+            </div>
+            <h1>新一社区资源网</h1>
+            
+            <!-- 点击添加飞书好友 -->
+            <a href="#" id="addFriendBtn" class="main-link">点击添加飞书好友</a>
+            
+            <!-- 飞书下载项 -->
+            <div class="download-container" id="downloadFeishu">
+                <div class="download-item">
+                    <i class="fas fa-download"></i>
+                    <span>点击下载飞书</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="divider"></div>
+        
+        <h2 class="section-title">头部交易所链接</h2>
+        
+        <div class="cards-container">
+            <div class="contact-card">
+                <h3 class="card-title"><i class="fas fa-link"></i> 头部交易所链接</h3>
+                
+                <ul class="features">
+                    <li data-url="https://www.oyicn.link/ul/6CngT5?channelId=XINYI999">
+                        <div class="icon-img">
+                            <img src="./images/ouyi.jpg" alt="欧意图标" style="width:24px;height:24px;">
+                        </div>
+                        <div class="link-text">
+                            <span class="highlight">欧意:头部 永续开创者 代言人</span>
+                            <div class="hidden-link">https://www.oyicn.link/ul/6CngT5?channelId=XINYI999</div>
+                        </div>
+                    </li>
+                    
+                    <li data-url="https://www.marketwebb.systems/join?ref=833916344">
+                        <div class="icon-img">
+                           <img src="./images/bian.jpg" alt="币安图标" style="width:24px;height:24px;">
+                        </div>
+                        <div class="link-text">
+                            <span class="highlight">币安:头部 信誉保证 周边多多</span>
+                            <div class="hidden-link">https://www.marketwebb.systems/join?ref=833916344</div>
+                        </div>
+                    </li>
+                    
+                    <li data-url="https://www.gateweb.xyz/signup/XINYIVIP?ref_type=103">
+                        <div class="icon-img">
+                            <img src="./images/gate.jpg" alt="gate图标" style="width:24px;height:24px;">
+                        </div>
+                        <div class="link-text">
+                            <span class="highlight">芝麻Gate:手续费最低 信誉no.1 Gate</span>
+                            <div class="hidden-link">https://www.gateweb.xyz/signup/XINYIVIP?ref_type=103</div>
+                        </div>
+                    </li>
+                    
+                    <li data-url="https://ksazabx.rest/zh-CN/register?vipCode=r6cm">
+                        <div class="icon-img">
+                           <img src="./images/weike.jpg" alt="维克图标" style="width:24px;height:24px;">
+                        </div>
+                        <div class="link-text">
+                            <span class="highlight">维客:热门新所 0滑点 不二首选</span>
+                            <div class="hidden-link">https://ksazabx.rest/zh-CN/register?vipCode=r6cm</div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="info-box">
+                    <span class="highlight">注意：注册完成并实名之后点击左上角头像查看自己UID，将UID发给负责人</span>
+                </div>
+            </div>
+            
+            <div class="contact-card vpn-card">
+                <h3 class="card-title"><i class="fas fa-tools"></i> 交易工具</h3>
+                
+                <ul class="features">
+                    <li data-text="345230888">
+                        <div class="icon-img">
+                            <img src="./images/kuailian.jpg" alt="快联图标" style="width:24px;height:24px;">
+                        </div>
+                        <div class="link-text">
+                            <span class="vpn-highlight">Let's VPN 邀请码：345230888 (送三天会员)</span>
+                        </div>
+                    </li>
+                    
+                    <li data-url="https://bitbucket.org/letsgo666/letsgogo_4/src/main/">
+                        <div class="icon-img">
+                            <i class="fas fa-cloud-download-alt" style="color: #4b6cb7;"></i>
+                        </div>
+                        <div class="link-text">
+                            <span class="vpn-highlight">下载链接</span>
+                            <div class="hidden-link">https://bitbucket.org/letsgo666/letsgogo_4/src/main/</div>
+                        </div>
+                    </li>
+                    
+                    <li data-url="https://github.com/LetsgoNetwork/LetsGo_2/blob/main/README.md">
+                        <div class="icon-img">
+                            <i class="fas fa-toolbox" style="color: #4b6cb7;"></i>
+                        </div>
+                        <div class="link-text">
+                            <span class="vpn-highlight">推荐交易工具和资源</span>
+                            <div class="hidden-link">https://github.com/LetsgoNetwork/LetsGo_2/blob/main/README.md</div>
+                        </div>
+                    </li>
+                    
+                    <li data-url="https://www.coinglass.com/zh">
+                        <div class="icon-img">
+                           <img src="./images/heyue.jpg" alt="合约图标" style="width:24px;height:24px;">
+                        </div>
+                        <div class="link-text">
+                            <span class="vpn-highlight">合约数据库coinglass</span>
+                            <div class="hidden-link">https://www.coinglass.com/zh</div>
+                        </div>
+                    </li>
+                    
+                    <li data-url="https://cn.tradingview.com/">
+                        <div class="icon-img">
+                            <img src="./images/kanpan.jpg" alt="看盘图标" style="width:24px;height:24px;">
+                        </div>
+                        <div class="link-text">
+                            <span class="vpn-highlight">最好用的看盘软件</span>
+                            <div class="hidden-link">https://cn.tradingview.com/</div>
+                        </div>
+                    </li>
+                    
+                    <li data-url="https://www.aicoin.com/zh-Hans">
+                        <div class="icon-img">
+                           <img src="./images/aico.jpg" alt="aico图标" style="width:24px;height:24px;">
+                        </div>
+                        <div class="link-text">
+                            <span class="vpn-highlight">AiCoin-领先的数据行情、智能工具平台</span>
+                            <div class="hidden-link">https://www.aicoin.com/zh-Hans</div>
+                        </div>
+                    </li>
+                    
+                    <li data-url="https://coinmarketcap.com/">
+                        <div class="icon-img">
+                            <img src="./images/bian2.jpg" alt="2图标" style="width:24px;height:24px;">
+                        </div>
+                        <div class="link-text">
+                            <span class="vpn-highlight">币安合约数据库</span>
+                            <div class="hidden-link">https://coinmarketcap.com/</div>
+                        </div>
+                    </li>
+                    
+                    <li data-url="https://www.binance.com/zh-CN/futures/funding-history/perpetual/trading-data">
+                        <div class="icon-img">
+                           <img src="./images/bian2.jpg" alt="2图标" style="width:24px;height:24px;">
+                        </div>
+                        <div class="link-text">
+                            <span class="vpn-highlight">币圈最全的数据库coinglass</span>
+                            <div class="hidden-link">https://www.binance.com/zh-CN/futures/funding-history/perpetual/trading-data</div>
+                        </div>
+                    </li>
+                    
+                    <li data-url="https://tokenomist.ai/">
+                        <div class="icon-img">
+                             <img src="./images/daibi.jpg" alt="代币" style="width:24px;height:24px;">
+                        </div>
+                        <div class="link-text">
+                            <span class="vpn-highlight">代币解锁查询</span>
+                            <div class="hidden-link">https://tokenomist.ai/</div>
+                        </div>
+                    </li>
+                    
+                    <li data-url="https://0595btc.com/">
+                        <div class="icon-img">
+                          <img src="./images/jujing.jpg" alt="图标" style="width:24px;height:24px;">
+                        </div>
+                        <div class="link-text">
+                            <span class="vpn-highlight">巨鲸钱包监测</span>
+                            <div class="hidden-link">https://0595btc.com/</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2 class="section-title">币圈资讯</h2>
+        
+        <div class="cards-container">
+            <div class="contact-card">
+                <ul class="features">
+                    <li data-url="https://www.panewslab.com/zh">
+                        <div class="icon-img">
+                            <img src="./images/pan.jpg" alt="图标" style="width:24px;height:24px;">
+                        </div>
+                        <div class="link-text">
+                            <span class="highlight">PANews</span>
+                            <div class="hidden-link">https://www.panewslab.com/zh</div>
+                        </div>
+                    </li>
+                    
+                    <li data-url="https://foresightnews.pro/news">
+                        <div class="icon-img">
+                           <img src="./images/for.jpg" alt="图标" style="width:24px;height:24px;">
+                        </div>
+                        <div class="link-text">
+                            <span class="highlight">Foresightnews</span>
+                            <div class="hidden-link">https://foresightnews.pro/news</div>
+                        </div>
+                    </li>
+                    
+                    <li data-url="https://www.theblockbeats.info/">
+                        <div class="icon-img">
+                          <img src="./images/the.jpg" alt="图标" style="width:24px;height:24px;">
+                        </div>
+                        <div class="link-text">
+                            <span class="highlight">Theblockbeats</span>
+                            <div class="hidden-link">https://www.theblockbeats.info/</div>
+                        </div>
+                    </li>
+                    <li data-url="https://cn.investing.com/">
+                        <div class="icon-img">
+                            <<img src="./images/inv.jpg" alt="图标" style="width:24px;height:24px;">
+                        </div>
+                        <div class="link-text">
+                            <span class="highlight">Investing</span>
+                            <div class="hidden-link">https://cn.investing.com/</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <footer>
+            <p>© 2025 新一社区资讯网站 | 专业流量推广服务</p>
+            <p>域名 提供技术支持 | 客服邮箱: service@xinyi.com</p>
+        </footer>
+    </div>
+    
+    <script>
+        // 卡片悬停动画
+        document.querySelectorAll('.contact-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 12px 20px rgba(0,0,0,0.15)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 8px 16px rgba(0,0,0,0.1)';
+            });
+        });
+        
+        // 主链接动画
+        const mainLink = document.querySelector('.main-link');
+        mainLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // 创建点击动画
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 300);
+        });
+        
+        // 飞书下载功能
+        document.getElementById('downloadFeishu').addEventListener('click', function() {
+            const url = 'https://www.feishu.cn/download';
+            
+            // 创建临时元素复制链接
+            const tempInput = document.createElement('textarea');
+            tempInput.value = url;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            
+            // 显示复制成功提示
+            const copyAlert = document.createElement('div');
+            copyAlert.textContent = '飞书下载链接已复制到剪贴板';
+            copyAlert.style.position = 'fixed';
+            copyAlert.style.bottom = '20px';
+            copyAlert.style.left = '50%';
+            copyAlert.style.transform = 'translateX(-50%)';
+            copyAlert.style.backgroundColor = '#4b6cb7';
+            copyAlert.style.color = 'white';
+            copyAlert.style.padding = '10px 20px';
+            copyAlert.style.borderRadius = '5px';
+            copyAlert.style.zIndex = '1000';
+            copyAlert.style.fontSize = '14px';
+            copyAlert.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+            document.body.appendChild(copyAlert);
+            
+            // 添加点击动画效果
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 300);
+            
+            setTimeout(() => {
+                document.body.removeChild(copyAlert);
+            }, 2000);
+        });
+        
+        // 添加背景动画效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.body;
+            let angle = 0;
+            
+            function animateBackground() {
+                angle = (angle + 0.2) % 360;
+                const grad = `linear-gradient(${angle}deg, #1a2a6c, #b21f1f, #fdbb2d)`;
+                body.style.background = grad;
+                requestAnimationFrame(animateBackground);
+            }
+            
+            animateBackground();
+            
+            // 链接显示功能
+            document.querySelectorAll('.features li').forEach(item => {
+                const url = item.getAttribute('data-url');
+                const text = item.getAttribute('data-text');
+                
+                item.addEventListener('click', function() {
+                    let copyContent = '';
+                    
+                    // 显示/隐藏链接
+                    const hiddenLink = this.querySelector('.hidden-link');
+                    if (hiddenLink) {
+                        const isVisible = hiddenLink.style.display === 'block';
+                        document.querySelectorAll('.hidden-link').forEach(link => {
+                            link.style.display = 'none';
+                        });
+                        
+                        if (!isVisible) {
+                            hiddenLink.style.display = 'block';
+                            copyContent = hiddenLink.textContent;
+                        }
+                    } 
+                    // 处理纯文本内容
+                    else if (text) {
+                        copyContent = text;
+                    }
+                    
+                    if (copyContent) {
+                        // 创建临时元素复制内容
+                        const tempInput = document.createElement('textarea');
+                        tempInput.value = copyContent;
+                        document.body.appendChild(tempInput);
+                        tempInput.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(tempInput);
+                        
+                        // 显示复制成功提示
+                        const copyAlert = document.createElement('div');
+                        copyAlert.textContent = '内容已复制到剪贴板';
+                        copyAlert.style.position = 'fixed';
+                        copyAlert.style.bottom = '20px';
+                        copyAlert.style.left = '50%';
+                        copyAlert.style.transform = 'translateX(-50%)';
+                        copyAlert.style.backgroundColor = '#4b6cb7';
+                        copyAlert.style.color = 'white';
+                        copyAlert.style.padding = '10px 20px';
+                        copyAlert.style.borderRadius = '5px';
+                        copyAlert.style.zIndex = '1000';
+                        copyAlert.style.fontSize = '14px';
+                        copyAlert.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+                        document.body.appendChild(copyAlert);
+                        
+                        setTimeout(() => {
+                            document.body.removeChild(copyAlert);
+                        }, 2000);
+                    }
+                });
+            });
+            
+            // 二维码弹窗功能
+            const modal = document.getElementById('qrModal');
+            const closeBtn = document.querySelector('.modal-close');
+            const addFriendBtn = document.getElementById('addFriendBtn');
+            
+            // 点击添加飞书好友按钮显示弹窗
+            addFriendBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.style.display = 'flex';
+            });
+            
+            // 点击关闭按钮隐藏弹窗
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+            
+            // 点击弹窗外部隐藏弹窗
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
