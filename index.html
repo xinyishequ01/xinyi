@@ -100,24 +100,27 @@
         }
         
         .main-link {
-            display: block;
-            background: #f0f0f0;
-            color: #333;
-            text-align: center;
-            padding: 15px;
-            font-size: 24px;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 10px;
-            margin: 20px auto;
-            transition: all 0.3s ease;
-            max-width: 300px;
-            cursor: pointer;
+             display: block;
+    background: linear-gradient(135deg, #3a7bd5, #00d2ff); /* 蓝色渐变 */
+    color: white; /* 文字改为白色 */
+    text-align: center;
+    padding: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+    margin: 20px auto;
+    transition: all 0.3s ease;
+    max-width: 300px;
+    cursor: pointer;
+    border: none; /* 移除边框 */
+    box-shadow: 0 4px 15px rgba(58, 123, 213, 0.3); /* 添加阴影 */
         }
         
         .main-link:hover {
-            background: #e0e0e0;
-            transform: translateY(-3px);
+          background: linear-gradient(135deg, #2c5fb3, #00b7e6); /* 悬停时加深颜色 */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(58, 123, 213, 0.4); /* 悬停时阴影加深 */
         }
         
         .section-title {
@@ -144,7 +147,7 @@
             display: flex;
             flex-direction: column;
             gap: 30px;
-            padding: 0 20px 30px;
+            padding: 0 10px 30px;
         }
         
         .contact-card {
@@ -158,14 +161,17 @@
         }
         
         .card-title {
-            font-size: 18px;
-            color: #333;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-align: left;
-            padding-left: 5px;
+           font-size: 20px; /* 增大字体 */
+    color: #333;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center; /* 居中处理 */
+    text-align: center; /* 居中处理 */
+    padding: 10px 0; /* 调整间距 */
+    background: transparent;
+    width: 100%;
         }
         
         .features {
@@ -175,13 +181,13 @@
         }
         
         .features li {
-   padding: 12px 15px;
+   padding: 15px 20px;
     border: 1px solid #eaeaea;
     border-radius: 8px; /* 增大圆角 */
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
     transition: all 0.2s ease;
     color: #333;
@@ -189,6 +195,9 @@
     background: #fff;
     position: relative;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* 添加轻微阴影 */
+ max-width: 100%; /* 增加长度 */
+    margin: 0 auto 10px; /* 居中处理 */
+    width: 95%; /* 增加宽度 */
         }
         
 .features li:after {
@@ -356,9 +365,8 @@
             }
             
             .features li {
-                font-size: 14px;
-                padding: 10px;
-                gap: 8px;
+                font-size: 16px; /* 移动端字体也相应增大 */
+           padding: 12px 15px;
             }
             
             .icon-img {
@@ -379,10 +387,11 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    text-align: left;
-    padding-left: 5px;
-    background: transparent; /* 透明背景 */
-    padding: 10px 0; /* 增加上下间距 */
+    justify-content: center; /* 居中处理 */
+    text-align: center; /* 居中处理 */
+    padding: 10px 0; /* 调整间距 */
+    background: transparent;
+    width: 100%;
             }
             
             .logo-container {
