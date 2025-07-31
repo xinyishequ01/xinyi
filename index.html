@@ -21,35 +21,36 @@
             background: #ffffff;
         }
         
-        body {
-            background: #ffffff;
-            color: #333;
-            min-height: 100vh;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow-x: hidden;
-        }
+      body {
+    background: #f0f2f5; /* 浅灰色背景 */
+    color: #333;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
         
         .container {
-            background: #ffffff;
-            width: 100%;
-            max-width: 800px;
-            overflow: hidden;
-            margin: 20px;
-            position: relative;
-            z-index: 10;
-            min-width: 0;
+            background: transparent;
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+    margin: 20px;
+    position: relative;
+    z-index: 10;
+    min-width: 0;
+    box-shadow: none; /* 移除阴影 */
         }
         
         header {
-            background: #ffffff;
-            color: #333;
-            padding: 40px 20px 30px;
-            text-align: center;
-            position: relative;
+            background: transparent;
+    color: #333;
+    padding: 40px 20px 30px;
+    text-align: center;
+    position: relative;
         }
         
         .logo-container {
@@ -120,11 +121,13 @@
         }
         
         .section-title {
-            text-align: center;
-            font-size: 28px;
-            color: #333;
-            margin: 30px 0;
-            position: relative;
+           text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin: 30px 0;
+    position: relative;
+    background: transparent; /* 透明背景 */
+    padding: 0 20px; /* 增加左右间距 */
         }
         
         .section-title:after {
@@ -145,236 +148,101 @@
         }
         
         .contact-card {
-            background: white;
-            padding: 25px;
-            transition: all 0.3s ease;
-            width: 100%;
-            margin: 0 auto;
-        }
-        
-        .vpn-card {
-        }
-        
-        .contact-card:hover {
-            transform: translateY(-5px);
+            padding: 0;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin: 0 auto;
+    background: transparent;
+    border: none;
+    box-shadow: none;
         }
         
         .card-title {
-            font-size: 24px;
+            font-size: 18px;
             color: #333;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 10px;
-            text-align: center;
-        }
-        
-        .card-title i {
-            color: #666;
-            font-size: 28px;
-        }
-        
-        .vpn-card .card-title i {
-            color: #888;
+            text-align: left;
+            padding-left: 5px;
         }
         
         .features {
             list-style-type: none;
-            padding: 15px 0;
+            padding: 0;
+            margin: 0;
         }
         
         .features li {
-            padding: 12px 15px;
-            border-bottom: 1px dashed #eee;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            color: #333;
-            position: relative;
+   padding: 12px 15px;
+    border: 1px solid #eaeaea;
+    border-radius: 8px; /* 增大圆角 */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #333;
+    margin-bottom: 10px;
+    background: #fff;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* 添加轻微阴影 */
         }
         
+.features li:after {
+    content: "→";
+    position: absolute;
+    right: 15px;
+    color: #999;
+    transition: all 0.2s ease;
+}
+
+.features li:hover:after {
+    color: #3f2b96;
+    transform: translateX(3px);
+}
         .features li:hover {
-            background-color: #f8f8f8;
+            background-color: #f9f9f9;
+            border-color: #ddd;
         }
         
         .features li:last-child {
-            border-bottom: none;
-        }
-        
-        .features li::after {
-            content: ">";
-            position: absolute;
-            right: 15px;
-            color: #999;
-            font-weight: bold;
+            margin-bottom: 0;
         }
         
         .icon-img {
-            width: 36px;
-            height: 36px;
-            min-width: 36px;
-            border-radius: 8px;
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #f5f5f5;
-            flex-shrink: 0;
+            background: transparent;
         }
         
         .icon-img img {
-            width: 24px;
-            height: 24px;
+            width: 100%;
+            height: 100%;
             object-fit: contain;
         }
         
         .link-text {
             flex-grow: 1;
             min-width: 0;
-        }
-        
-        .highlight {
-            background: #f5f5f5;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-weight: bold;
-            color: #333;
-            display: inline;
-            margin: 0 3px;
-            word-break: break-word;
-            white-space: normal;
-            line-height: 1.4;
-        }
-        
-        .vpn-highlight {
-            background: #f0f7ff;
-            color: #333;
-        }
-        
-        .link-item {
-            display: block;
-            padding: 12px 15px;
-            margin: 8px 0;
-            border-radius: 8px;
-            background-color: #f8f8f8;
-            transition: all 0.2s ease;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            color: #333;
-        }
-        
-        .link-item:hover {
-            background-color: #f0f0f0;
-            transform: translateX(5px);
-        }
-        
-        .qr-section {
-            background: #f8f8f8;
-            padding: 30px;
-            text-align: center;
-        }
-        
-        .qr-title {
-            font-size: 24px;
-            margin-bottom: 25px;
-            color: #333;
-            font-weight: bold;
-        }
-        
-        .qr-code {
-            width: 200px;
-            height: 200px;
-            background: #f5f5f5;
-            margin: 0 auto;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #333;
-            font-size: 16px;
-            font-weight: bold;
-            flex-direction: column;
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .qr-code i {
-            font-size: 70px;
-            margin-bottom: 15px;
-            z-index: 2;
-            color: #666;
-        }
-        
-        .qr-code::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(45deg, transparent 48%, rgba(0,0,0,0.05) 50%, transparent 52%),
-                linear-gradient(-45deg, transparent 48%, rgba(0,0,0,0.05) 50%, transparent 52%);
-            background-size: 20px 20px;
-            z-index: 1;
-        }
-        
-        .qr-code div {
-            z-index: 2;
-            line-height: 1.6;
+            font-weight: 500;
         }
         
         footer {
-            background: #f5f5f5;
-            color: #333;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        
-        .benefits {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            max-width: 500px;
-            margin: 20px auto;
-            gap: 15px;
-        }
-        
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            background: rgba(0,0,0,0.05);
-            padding: 10px 15px;
-            border-radius: 30px;
-            font-size: 14px;
-            color: #333;
-        }
-        
-        .benefit-item i {
-            margin-right: 8px;
-            color: #666;
-        }
-        
-        .card-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-        
-        .info-box {
-            background: #f8f8f8;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 15px 0;
-        }
-        
-        .info-box.warning {
-            background: #f5f5f5;
+             background: transparent;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 30px;
         }
         
         /* 二维码弹窗样式 */
@@ -457,17 +325,6 @@
         }
         
         /* 动画效果 */
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.7; }
-            50% { transform: scale(1.1); opacity: 0.9; }
-            100% { transform: scale(1); opacity: 0.7; }
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
         @keyframes modalIn {
             from { opacity: 0; transform: translateY(-50px) scale(0.8); }
             to { opacity: 1; transform: translateY(0) scale(1); }
@@ -505,33 +362,27 @@
             }
             
             .icon-img {
-                width: 30px;
-                height: 30px;
-                min-width: 30px;
+                width: 20px;
+                height: 20px;
+                min-width: 20px;
             }
             
             .icon-img img {
-                width: 20px;
-                height: 20px;
+                width: 16px;
+                height: 16px;
             }
             
-            .highlight, .vpn-highlight {
-                font-size: 14px;
-                line-height: 1.4;
-            }
-            
-            .qr-code {
-                width: 180px;
-                height: 180px;
-            }
-            
-            .qr-code i {
-                font-size: 60px;
-            }
-            
-            .link-item {
-                font-size: 14px;
-                padding: 10px;
+            .card-title {
+                font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    padding-left: 5px;
+    background: transparent; /* 透明背景 */
+    padding: 10px 0; /* 增加上下间距 */
             }
             
             .logo-container {
@@ -561,54 +412,6 @@
             .modal-note {
                 font-size: 12px;
             }
-            
-            .download-item {
-                max-width: 300px;
-            }
-            
-            .info-box .highlight {
-                white-space: normal;
-                line-height: 1.5;
-                display: block;
-                margin: 5px 0;
-            }
-        }
-        
-        /* 飞书下载项样式 */
-        .download-container {
-            max-width: 300px;
-            margin: 0 auto 10px;
-            background: rgba(0,0,0,0.05);
-            border-radius: 10px;
-            padding: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: block;
-            color: #333;
-        }
-        
-        .download-container:hover {
-            background: rgba(0,0,0,0.1);
-            transform: translateY(-2px);
-        }
-        
-        .download-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            color: #333;
-            font-weight: 500;
-        }
-        
-        .download-item i {
-            font-size: 20px;
-        }
-        
-        /* 链接点击效果 */
-        .features li[data-url]:hover {
-            background-color: #f0f0f0 !important;
         }
     </style>
 </head>
@@ -660,7 +463,7 @@
                             <img src="./images/ouyi.jpg" alt="欧意图标">
                         </div>
                         <div class="link-text">
-                            <span class="highlight">欧意注册下载链接</span>
+                            欧意注册下载链接
                         </div>
                     </li>
                     
@@ -669,7 +472,7 @@
                            <img src="./images/bian.jpg" alt="币安图标">
                         </div>
                         <div class="link-text">
-                            <span class="highlight">币安注册下载注册链接</span>
+                            币安注册下载注册链接
                         </div>
                     </li>
                     
@@ -678,7 +481,7 @@
                             <img src="./images/gate.jpg" alt="gate图标">
                         </div>
                         <div class="link-text">
-                            <span class="highlight">芝麻开门Gate下载注册链接</span>
+                            芝麻开门Gate下载注册链接
                         </div>
                     </li>
                     
@@ -687,14 +490,13 @@
                            <img src="./images/weike.jpg" alt="维克图标">
                         </div>
                         <div class="link-text">
-                            <span class="highlight">维客 Week下载链接</span>
+                            维客 Week下载链接
                         </div>
                     </li>
                 </ul>
-                
             </div>
             
-            <div class="contact-card vpn-card">
+            <div class="contact-card">
                 <h3 class="card-title"><i class="fas fa-tools"></i> 交易工具</h3>
                 
                 <ul class="features">
@@ -703,25 +505,25 @@
                             <img src="./images/kuailian.jpg" alt="快联图标">
                         </div>
                         <div class="link-text">
-                            <span class="vpn-highlight">Let's VPN 邀请码：345230888 (送三天会员)</span>
+                            Let's VPN 邀请码：345230888 (送三天会员)
                         </div>
                     </li>
                     
                     <li data-url="https://bitbucket.org/letsgo666/letsgogo_4/src/main/">
                         <div class="icon-img">
-                            <i class="fas fa-cloud-download-alt" style="color: #666;"></i>
+                            <i class="fas fa-cloud-download-alt"></i>
                         </div>
                         <div class="link-text">
-                            <span class="vpn-highlight">下载链接</span>
+                            下载链接
                         </div>
                     </li>
                     
                     <li data-url="https://github.com/LetsgoNetwork/LetsGo_2/blob/main/README.md">
                         <div class="icon-img">
-                            <i class="fas fa-toolbox" style="color: #666;"></i>
+                            <i class="fas fa-toolbox"></i>
                         </div>
                         <div class="link-text">
-                            <span class="vpn-highlight">推荐交易工具和资源</span>
+                            推荐交易工具和资源
                         </div>
                     </li>
                     
@@ -730,7 +532,7 @@
                            <img src="./images/heyue.jpg" alt="合约图标">
                         </div>
                         <div class="link-text">
-                            <span class="vpn-highlight">合约数据库coinglass</span>
+                            合约数据库coinglass
                         </div>
                     </li>
                     
@@ -739,7 +541,7 @@
                             <img src="./images/kanpan.jpg" alt="看盘图标">
                         </div>
                         <div class="link-text">
-                            <span class="vpn-highlight">最好用的看盘软件</span>
+                            最好用的看盘软件
                         </div>
                     </li>
                     
@@ -748,7 +550,7 @@
                            <img src="./images/aico.jpg" alt="aico图标">
                         </div>
                         <div class="link-text">
-                            <span class="vpn-highlight">AiCoin-领先的数据行情、智能工具平台</span>
+                            AiCoin-领先的数据行情、智能工具平台
                         </div>
                     </li>
                     
@@ -757,7 +559,7 @@
                             <img src="./images/bian2.jpg" alt="2图标">
                         </div>
                         <div class="link-text">
-                            <span class="vpn-highlight">币安合约数据库</span>
+                            币安合约数据库
                         </div>
                     </li>
                     
@@ -766,7 +568,7 @@
                            <img src="./images/bian2.jpg" alt="2图标">
                         </div>
                         <div class="link-text">
-                            <span class="vpn-highlight">币圈最全的数据库coinglass</span>
+                            币圈最全的数据库coinglass
                         </div>
                     </li>
                     
@@ -775,7 +577,7 @@
                              <img src="./images/daibi.jpg" alt="代币">
                         </div>
                         <div class="link-text">
-                            <span class="vpn-highlight">代币解锁查询</span>
+                            代币解锁查询
                         </div>
                     </li>
                     
@@ -784,7 +586,7 @@
                           <img src="./images/jujing.jpg" alt="图标">
                         </div>
                         <div class="link-text">
-                            <span class="vpn-highlight">巨鲸钱包监测</span>
+                            巨鲸钱包监测
                         </div>
                     </li>
                 </ul>
@@ -795,13 +597,14 @@
         
         <div class="cards-container">
             <div class="contact-card">
+                <h3 class="card-title"><i class="fas fa-newspaper"></i> 资讯平台</h3>
                 <ul class="features">
                     <li data-url="https://www.panewslab.com/zh">
                         <div class="icon-img">
                             <img src="./images/pan.jpg" alt="图标">
                         </div>
                         <div class="link-text">
-                            <span class="highlight">PANews</span>
+                            PANews
                         </div>
                     </li>
                     
@@ -810,7 +613,7 @@
                            <img src="./images/for.jpg" alt="图标">
                         </div>
                         <div class="link-text">
-                            <span class="highlight">Foresightnews</span>
+                            Foresightnews
                         </div>
                     </li>
                     
@@ -819,7 +622,7 @@
                           <img src="./images/the.jpg" alt="图标">
                         </div>
                         <div class="link-text">
-                            <span class="highlight">Theblockbeats</span>
+                            Theblockbeats
                         </div>
                     </li>
                     <li data-url="https://cn.investing.com/">
@@ -827,7 +630,7 @@
                             <img src="./images/inv.jpg" alt="图标">
                         </div>
                         <div class="link-text">
-                            <span class="highlight">Investing</span>
+                            Investing
                         </div>
                     </li>
                 </ul>
