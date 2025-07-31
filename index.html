@@ -18,6 +18,7 @@
             max-width: 100%;
             overflow-x: hidden;
             touch-action: pan-y;
+            background: #ffffff;
         }
         
         body {
@@ -33,9 +34,9 @@
         }
         
         .container {
-            background: rgba(255, 255, 255, 0.95);
+            background: #ffffff;
             border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 800px;
             overflow: hidden;
@@ -43,14 +44,16 @@
             position: relative;
             z-index: 10;
             min-width: 0;
+            border: 1px solid #eee;
         }
         
         header {
-            background: linear-gradient(to right, #4b6cb7, #182848);
-            color: white;
+            background: #ffffff;
+            color: #333;
             padding: 40px 20px 30px;
             text-align: center;
             position: relative;
+            border-bottom: 1px solid #eee;
         }
         
         .logo-container {
@@ -70,10 +73,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             z-index: 2;
             background: #fff;
             overflow: hidden;
+            border: 1px solid #eee;
         }
         
         .logo img {
@@ -88,9 +92,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #4b6cb7, #182848);
+            background: #f5f5f5;
             border-radius: 50%;
-            animation: pulse 3s infinite;
             z-index: 1;
         }
         
@@ -98,13 +101,13 @@
             font-size: 32px;
             margin: 10px 0;
             letter-spacing: 1px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            color: #333;
         }
         
         .main-link {
             display: block;
-            background: #ff6b6b;
-            color: white;
+            background: #f0f0f0;
+            color: #333;
             text-align: center;
             padding: 15px;
             font-size: 24px;
@@ -113,29 +116,22 @@
             border-radius: 10px;
             margin: 20px auto;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             max-width: 300px;
             cursor: pointer;
+            border: 1px solid #ddd;
         }
         
         .main-link:hover {
-            background: #ff5252;
+            background: #e0e0e0;
             transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-        }
-        
-        .divider {
-            height: 4px;
-            background: linear-gradient(to right, #4b6cb7, #ffd700, #ff6b6b);
-            margin: 30px auto;
-            border-radius: 2px;
-            width: 90%;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
         
         .section-title {
             text-align: center;
             font-size: 28px;
-            color: #182848;
+            color: #333;
             margin: 30px 0;
             position: relative;
         }
@@ -144,8 +140,8 @@
             content: "";
             display: block;
             width: 100px;
-            height: 4px;
-            background: #ff6b6b;
+            height: 2px;
+            background: #ddd;
             margin: 10px auto;
             border-radius: 2px;
         }
@@ -160,26 +156,26 @@
         .contact-card {
             background: white;
             border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.05);
             padding: 25px;
             transition: all 0.3s ease;
-            border-top: 5px solid #4b6cb7;
+            border: 1px solid #eee;
             width: 100%;
             margin: 0 auto;
         }
         
         .vpn-card {
-            border-top: 5px solid #fdbb2d;
+            border-top: 5px solid #f0f0f0;
         }
         
         .contact-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.1);
         }
         
         .card-title {
             font-size: 24px;
-            color: #182848;
+            color: #333;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
@@ -189,12 +185,12 @@
         }
         
         .card-title i {
-            color: #ff6b6b;
+            color: #666;
             font-size: 28px;
         }
         
         .vpn-card .card-title i {
-            color: #fdbb2d;
+            color: #888;
         }
         
         .features {
@@ -211,10 +207,11 @@
             font-size: 16px;
             cursor: pointer;
             transition: all 0.3s ease;
+            color: #333;
         }
         
         .features li:hover {
-            background-color: #f8f9fa;
+            background-color: #f8f8f8;
         }
         
         .features li:last-child {
@@ -229,7 +226,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #f0f7ff;
+            background: #f5f5f5;
             flex-shrink: 0;
         }
         
@@ -245,21 +242,22 @@
         }
         
         .highlight {
-            background: linear-gradient(to right, #fff9db, #fff0b3);
+            background: #f5f5f5;
             padding: 5px 10px;
             border-radius: 5px;
             font-weight: bold;
-            color: #e67700;
+            color: #333;
             display: inline;
             margin: 0 3px;
             word-break: break-word;
             white-space: normal;
             line-height: 1.4;
+            border: 1px solid #eee;
         }
         
         .vpn-highlight {
-            background: linear-gradient(to right, #e6f7ff, #b3e0ff);
-            color: #0066cc;
+            background: #f0f7ff;
+            color: #333;
         }
         
         .link-item {
@@ -267,60 +265,63 @@
             padding: 12px 15px;
             margin: 8px 0;
             border-radius: 8px;
-            background-color: #f8f9fa;
-            border-left: 3px solid #4b6cb7;
+            background-color: #f8f8f8;
+            border-left: 3px solid #ddd;
             transition: all 0.2s ease;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            color: #333;
         }
         
         .link-item:hover {
-            background-color: #e9ecef;
+            background-color: #f0f0f0;
             transform: translateX(5px);
         }
         
         .vpn-card .link-item {
-            border-left-color: #fdbb2d;
+            border-left-color: #ccc;
         }
         
         .qr-section {
-            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            background: #f8f8f8;
             padding: 30px;
             text-align: center;
-            border-top: 1px solid #dee2e6;
+            border-top: 1px solid #eee;
         }
         
         .qr-title {
             font-size: 24px;
             margin-bottom: 25px;
-            color: #182848;
+            color: #333;
             font-weight: bold;
         }
         
         .qr-code {
             width: 200px;
             height: 200px;
-            background: linear-gradient(45deg, #4b6cb7, #182848);
+            background: #f5f5f5;
             margin: 0 auto;
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: #333;
             font-size: 16px;
             font-weight: bold;
             flex-direction: column;
             padding: 20px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.05);
             position: relative;
             overflow: hidden;
+            border: 1px solid #eee;
         }
         
         .qr-code i {
             font-size: 70px;
             margin-bottom: 15px;
             z-index: 2;
+            color: #666;
         }
         
         .qr-code::before {
@@ -329,8 +330,8 @@
             width: 100%;
             height: 100%;
             background: 
-                linear-gradient(45deg, transparent 48%, rgba(255,255,255,0.1) 50%, transparent 52%),
-                linear-gradient(-45deg, transparent 48%, rgba(255,255,255,0.1) 50%, transparent 52%);
+                linear-gradient(45deg, transparent 48%, rgba(0,0,0,0.05) 50%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, rgba(0,0,0,0.05) 50%, transparent 52%);
             background-size: 20px 20px;
             z-index: 1;
         }
@@ -341,12 +342,13 @@
         }
         
         footer {
-            background: #182848;
-            color: white;
+            background: #f5f5f5;
+            color: #333;
             text-align: center;
             padding: 20px;
             font-size: 14px;
             line-height: 1.6;
+            border-top: 1px solid #eee;
         }
         
         .benefits {
@@ -361,15 +363,16 @@
         .benefit-item {
             display: flex;
             align-items: center;
-            background: rgba(255,255,255,0.1);
+            background: rgba(0,0,0,0.05);
             padding: 10px 15px;
             border-radius: 30px;
             font-size: 14px;
+            color: #333;
         }
         
         .benefit-item i {
             margin-right: 8px;
-            color: #ffd700;
+            color: #666;
         }
         
         .card-grid {
@@ -379,16 +382,16 @@
         }
         
         .info-box {
-            background: #f8f9fa;
+            background: #f8f8f8;
             border-radius: 10px;
             padding: 15px;
             margin: 15px 0;
-            border-left: 4px solid #4b6cb7;
+            border-left: 4px solid #ddd;
         }
         
         .info-box.warning {
-            border-left-color: #e67e22;
-            background: #fff9db;
+            border-left-color: #ccc;
+            background: #f5f5f5;
         }
         
         /* 二维码弹窗样式 */
@@ -412,7 +415,7 @@
             max-width: 400px;
             padding: 30px;
             text-align: center;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
             position: relative;
             animation: modalIn 0.3s ease;
         }
@@ -428,14 +431,14 @@
         }
         
         .modal-close:hover {
-            color: #ff5252;
+            color: #666;
             transform: scale(1.1);
         }
         
         .modal-title {
             font-size: 24px;
             margin-bottom: 20px;
-            color: #182848;
+            color: #333;
         }
         
         .modal-qr-code {
@@ -450,6 +453,7 @@
             position: relative;
             overflow: hidden;
             padding: 10px;
+            border: 1px solid #eee;
         }
         
         .modal-qr-code img {
@@ -466,7 +470,7 @@
         
         .modal-note {
             font-size: 14px;
-            color: #888;
+            color: #777;
             margin-top: 15px;
         }
         
@@ -592,18 +596,19 @@
         .download-container {
             max-width: 300px;
             margin: 0 auto 10px;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(0,0,0,0.05);
             border-radius: 10px;
             padding: 10px;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             display: block;
-            color: white;
+            color: #333;
+            border: 1px solid #ddd;
         }
         
         .download-container:hover {
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(0,0,0,0.1);
             transform: translateY(-2px);
         }
         
@@ -612,7 +617,7 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            color: white;
+            color: #333;
             font-weight: 500;
         }
         
@@ -622,7 +627,7 @@
         
         /* 链接点击效果 */
         .features li[data-url]:hover {
-            background-color: #f0f7ff !important;
+            background-color: #f0f0f0 !important;
         }
     </style>
 </head>
@@ -662,9 +667,7 @@
             </a>
         </header>
         
-        <div class="divider"></div>
-        
-        <h2 class="section-title">头部交易所链接</h2>
+        <h2 class="section-title">全球十大交易所</h2>
         
         <div class="cards-container">
             <div class="contact-card">
@@ -676,7 +679,7 @@
                             <img src="./images/ouyi.jpg" alt="欧意图标">
                         </div>
                         <div class="link-text">
-                            <span class="highlight">欧意:头部 永续开创者 代言人</span>
+                            <span class="highlight">欧意注册下载链接</span>
                         </div>
                     </li>
                     
@@ -685,7 +688,7 @@
                            <img src="./images/bian.jpg" alt="币安图标">
                         </div>
                         <div class="link-text">
-                            <span class="highlight">币安:头部 信誉保证 周边多多</span>
+                            <span class="highlight">币安注册下载注册链接</span>
                         </div>
                     </li>
                     
@@ -694,7 +697,7 @@
                             <img src="./images/gate.jpg" alt="gate图标">
                         </div>
                         <div class="link-text">
-                            <span class="highlight">芝麻Gate:手续费最低 信誉no.1 Gate</span>
+                            <span class="highlight">芝麻开门Gate下载注册链接</span>
                         </div>
                     </li>
                     
@@ -703,13 +706,11 @@
                            <img src="./images/weike.jpg" alt="维克图标">
                         </div>
                         <div class="link-text">
-                            <span class="highlight">维客:热门新所 0滑点 不二首选</span>
+                            <span class="highlight">维客 Week下载链接</span>
                         </div>
                     </li>
                 </ul>
-                <div class="info-box">
-                    <span class="highlight">注意：注册完成并实名之后点击左上角头像查看自己UID，将UID发给负责人</span>
-                </div>
+                
             </div>
             
             <div class="contact-card vpn-card">
@@ -727,7 +728,7 @@
                     
                     <li data-url="https://bitbucket.org/letsgo666/letsgogo_4/src/main/">
                         <div class="icon-img">
-                            <i class="fas fa-cloud-download-alt" style="color: #4b6cb7;"></i>
+                            <i class="fas fa-cloud-download-alt" style="color: #666;"></i>
                         </div>
                         <div class="link-text">
                             <span class="vpn-highlight">下载链接</span>
@@ -736,7 +737,7 @@
                     
                     <li data-url="https://github.com/LetsgoNetwork/LetsGo_2/blob/main/README.md">
                         <div class="icon-img">
-                            <i class="fas fa-toolbox" style="color: #4b6cb7;"></i>
+                            <i class="fas fa-toolbox" style="color: #666;"></i>
                         </div>
                         <div class="link-text">
                             <span class="vpn-highlight">推荐交易工具和资源</span>
@@ -852,8 +853,6 @@
             </div>
         </div>
         
-        <div class="divider"></div>
-        
         <footer>
             <p>© 2025 新一社区资讯网站 | 专业流量推广服务</p>
             <p>域名 提供技术支持 | 客服邮箱: service@xinyi.com</p>
@@ -864,13 +863,13 @@
         // 卡片悬停动画
         document.querySelectorAll('.contact-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px)';
-                this.style.boxShadow = '0 12px 20px rgba(0,0,0,0.15)';
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 12px 20px rgba(0,0,0,0.1)';
             });
             
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
-                this.style.boxShadow = '0 8px 16px rgba(0,0,0,0.1)';
+                this.style.boxShadow = '0 8px 16px rgba(0,0,0,0.05)';
             });
         });
         
@@ -929,7 +928,7 @@
                         copyAlert.style.bottom = '20px';
                         copyAlert.style.left = '50%';
                         copyAlert.style.transform = 'translateX(-50%)';
-                        copyAlert.style.backgroundColor = '#4b6cb7';
+                        copyAlert.style.backgroundColor = '#333';
                         copyAlert.style.color = 'white';
                         copyAlert.style.padding = '10px 20px';
                         copyAlert.style.borderRadius = '5px';
