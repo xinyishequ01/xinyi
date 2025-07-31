@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-    <title>新一社区资讯网</title>
+    <title>新一社区资源网</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
     <style>
@@ -21,7 +21,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background: #ffffff;
             color: #333;
             min-height: 100vh;
             padding: 20px;
@@ -487,64 +487,6 @@
             to { opacity: 1; transform: translateY(0) scale(1); }
         }
         
-        /* 背景装饰 */
-        .bg-decoration {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-        
-        .decoration-circle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.1);
-            animation: float 15s infinite linear;
-        }
-        
-        .circle-1 {
-            width: 150px;
-            height: 150px;
-            top: 10%;
-            left: 5%;
-            animation-duration: 20s;
-        }
-        
-        .circle-2 {
-            width: 100px;
-            height: 100px;
-            top: 70%;
-            left: 80%;
-            animation-duration: 15s;
-        }
-        
-        .circle-3 {
-            width: 80px;
-            height: 80px;
-            top: 30%;
-            left: 90%;
-            animation-duration: 25s;
-        }
-        
-        .circle-4 {
-            width: 120px;
-            height: 120px;
-            top: 80%;
-            left: 10%;
-            animation-duration: 18s;
-        }
-        
-        @keyframes float {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(20px, 30px) rotate(90deg); }
-            50% { transform: translate(0, 60px) rotate(180deg); }
-            75% { transform: translate(-20px, 30px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-        
         /* 移动端适配优化 */
         @media (max-width: 600px) {
             body {
@@ -685,14 +627,6 @@
     </style>
 </head>
 <body>
-    <!-- 背景装饰元素 -->
-    <div class="bg-decoration">
-        <div class="decoration-circle circle-1"></div>
-        <div class="decoration-circle circle-2"></div>
-        <div class="decoration-circle circle-3"></div>
-        <div class="decoration-circle circle-4"></div>
-    </div>
-    
     <!-- 二维码弹窗 -->
     <div id="qrModal" class="modal">
         <div class="modal-content">
@@ -714,7 +648,7 @@
                     <img src="./images/log.jpg" alt="新一社区Logo">
                 </div>
             </div>
-            <h1>新一社区资讯网</h1>
+            <h1>新一社区资源网</h1>
             
             <!-- 点击添加飞书好友 -->
             <a href="#" id="addFriendBtn" class="main-link">点击添加飞书好友</a>
@@ -730,11 +664,11 @@
         
         <div class="divider"></div>
         
-        <h2 class="section-title">十大交易所链接</h2>
+        <h2 class="section-title">头部交易所链接</h2>
         
         <div class="cards-container">
             <div class="contact-card">
-                <h3 class="card-title"><i class="fas fa-link"></i> 十大交易所链接</h3>
+                <h3 class="card-title"><i class="fas fa-link"></i> 头部交易所链接</h3>
                 
                 <ul class="features">
                     <li data-url="https://www.oyicn.link/ul/6CngT5?channelId=XINYI999">
@@ -742,7 +676,7 @@
                             <img src="./images/ouyi.jpg" alt="欧意图标">
                         </div>
                         <div class="link-text">
-                            <span class="highlight">欧意:头部 永续开创者</span>
+                            <span class="highlight">欧意:头部 永续开创者 代言人</span>
                         </div>
                     </li>
                     
@@ -751,7 +685,7 @@
                            <img src="./images/bian.jpg" alt="币安图标">
                         </div>
                         <div class="link-text">
-                            <span class="highlight">币安:头部 信誉保证</span>
+                            <span class="highlight">币安:头部 信誉保证 周边多多</span>
                         </div>
                     </li>
                     
@@ -760,7 +694,7 @@
                             <img src="./images/gate.jpg" alt="gate图标">
                         </div>
                         <div class="link-text">
-                            <span class="highlight">芝麻 Gate:手续费最低</span>
+                            <span class="highlight">芝麻Gate:手续费最低 信誉no.1 Gate</span>
                         </div>
                     </li>
                     
@@ -769,7 +703,7 @@
                            <img src="./images/weike.jpg" alt="维克图标">
                         </div>
                         <div class="link-text">
-                            <span class="highlight">维客 Week:热门新所</span>
+                            <span class="highlight">维客:热门新所 0滑点 不二首选</span>
                         </div>
                     </li>
                 </ul>
@@ -921,8 +855,8 @@
         <div class="divider"></div>
         
         <footer>
-            <p>© 2025 新一社区 | 专业流量推广服务</p>
-            <p>域名 提供技术支持 | </p>
+            <p>© 2025 新一社区资讯网站 | 专业流量推广服务</p>
+            <p>域名 提供技术支持 | 客服邮箱: service@xinyi.com</p>
         </footer>
     </div>
     
@@ -961,20 +895,7 @@
             }, 300);
         });
         
-        // 添加背景动画效果
         document.addEventListener('DOMContentLoaded', function() {
-            const body = document.body;
-            let angle = 0;
-            
-            function animateBackground() {
-                angle = (angle + 0.2) % 360;
-                const grad = `linear-gradient(${angle}deg, #1a2a6c, #b21f1f, #fdbb2d)`;
-                body.style.background = grad;
-                requestAnimationFrame(animateBackground);
-            }
-            
-            animateBackground();
-            
             // 链接点击跳转功能
             document.querySelectorAll('.features li[data-url]').forEach(item => {
                 item.addEventListener('click', function(e) {
