@@ -429,11 +429,11 @@
     <div id="qrModal" class="modal">
         <div class="modal-content">
             <span class="modal-close">&times;</span>
-            <h3 class="modal-title">添加飞书好友</h3>
+            <h3 class="modal-title">添加钉钉好友</h3>
             <div class="modal-qr-code">
-                <img src="./images/feishu.jpg" alt="飞书二维码">
+                <img src="./images/ding.jpg" alt="二维码">
             </div>
-            <p class="modal-text">扫描上方二维码添加飞书好友</p>
+            <p class="modal-text">扫描上方二维码添加钉钉好友</p>
             <p class="modal-note">添加好友时请备注"新一社区"</p>
         </div>
     </div>
@@ -449,15 +449,15 @@
             <h1>新一社区资源网</h1>
             
             <!-- 点击添加飞书好友 -->
-            <a href="#" id="addFriendBtn" class="main-link">点击添加飞书好友</a>
+            <a href="#" id="addFriendBtn" class="main-link">点击添加钉钉好友</a>
             
-            <!-- 飞书下载项 - 修改为直接跳转 -->
-            <a href="https://www.feishu.cn/download" class="download-container" id="downloadFeishu" target="_blank">
-                <div class="download-item">
-                    <i class="fas fa-download"></i>
-                    <span>点击下载飞书</span>
-                </div>
-            </a>
+            <!-- 下载项 - 修改为直接跳转 -->
+            <a href="https://www.dingtalk.com/download" class="download-container" id="downloadDingtalk" target="_blank">
+    <div class="download-item">
+        <i class="fas fa-download"></i>
+        <span>点击下载钉钉</span>
+    </div>
+</a>
         </header>
         
         <h2 class="section-title">全球十大交易所</h2>
@@ -677,13 +677,13 @@
         });
         
         // 飞书下载功能 - 修改为只保留点击动画
-        document.getElementById('downloadFeishu').addEventListener('click', function(e) {
-            // 添加点击动画效果
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 300);
-        });
+        document.getElementById('downloadDingtalk').addEventListener('click', function(e) {
+    // 添加点击动画效果
+    this.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        this.style.transform = '';
+    }, 300);
+});
         
         document.addEventListener('DOMContentLoaded', function() {
             // 链接点击跳转功能
